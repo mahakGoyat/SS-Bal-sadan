@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { X, ZoomIn, ChevronLeft, ChevronRight } from "lucide-react";
 
 const categories = ["All", "Annual Function", "Republic Day", "Independence Day", "Cultural", "Prize Distribution", "Sports Day"];
@@ -81,7 +81,7 @@ export default function Gallery() {
       <section className="py-14 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatePresence mode="wait">
-            <motion.div
+            <m.div
               key={activeCategory}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
@@ -90,7 +90,7 @@ export default function Gallery() {
               className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
             >
               {filtered.map((photo, idx) => (
-                <motion.div
+                <m.div
                   key={photo.id}
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -111,9 +111,9 @@ export default function Gallery() {
                   <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-black/70 to-transparent p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <p className="text-white text-xs font-medium">{photo.title}</p>
                   </div>
-                </motion.div>
+                </m.div>
               ))}
-            </motion.div>
+            </m.div>
           </AnimatePresence>
         </div>
       </section>
@@ -121,7 +121,7 @@ export default function Gallery() {
       {/* Lightbox */}
       <AnimatePresence>
         {lightbox !== null && (
-          <motion.div
+          <m.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -153,7 +153,7 @@ export default function Gallery() {
             </button>
 
             {/* Image */}
-            <motion.img
+            <m.img
               key={lightbox}
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
@@ -168,7 +168,7 @@ export default function Gallery() {
               <p className="font-semibold">{filtered[lightbox].title}</p>
               <p className="text-sm text-white/60">{lightbox + 1} / {filtered.length}</p>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </div>

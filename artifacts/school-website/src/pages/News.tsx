@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Calendar, Tag, ArrowRight } from "lucide-react";
 
 const fadeUp = {
@@ -47,9 +47,9 @@ export default function News() {
           <div className="grid lg:grid-cols-3 gap-10">
             {/* Main News */}
             <div className="lg:col-span-2">
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
+              <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-8">
                 {/* Featured */}
-                <motion.div variants={fadeUp} className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
+                <m.div variants={fadeUp} className="bg-white rounded-3xl overflow-hidden shadow-md hover:shadow-xl transition-all group">
                   <div className="overflow-hidden h-64">
                     <img src={news[0].img} alt={news[0].title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   </div>
@@ -68,11 +68,11 @@ export default function News() {
                       Read More <ArrowRight className="w-4 h-4" />
                     </button>
                   </div>
-                </motion.div>
+                </m.div>
 
                 {/* Other news */}
                 {news.slice(1).map((item) => (
-                  <motion.div key={item.id} variants={fadeUp} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group flex gap-0">
+                  <m.div key={item.id} variants={fadeUp} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all group flex gap-0">
                     <div className="w-32 sm:w-44 flex-shrink-0 overflow-hidden">
                       <img src={item.img} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                     </div>
@@ -84,15 +84,15 @@ export default function News() {
                       <h3 className="font-heading font-semibold text-[#111111] text-base mb-2 leading-tight">{item.title}</h3>
                       <p className="text-gray-500 text-sm leading-relaxed line-clamp-2">{item.excerpt}</p>
                     </div>
-                  </motion.div>
+                  </m.div>
                 ))}
-              </motion.div>
+              </m.div>
             </div>
 
             {/* Sidebar */}
             <div className="space-y-6">
               {/* Announcements */}
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+              <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                 <h3 className="font-heading font-bold text-[#111111] text-lg mb-5 flex items-center gap-2">
                   <span className="w-2 h-6 bg-[#ffffff] rounded-full"></span>
                   Announcements
@@ -107,10 +107,10 @@ export default function News() {
                     </div>
                   ))}
                 </div>
-              </motion.div>
+              </m.div>
 
               {/* Categories */}
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
+              <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                 <h3 className="font-heading font-bold text-[#111111] text-lg mb-4">Categories</h3>
                 {["Results", "Achievement", "Infrastructure", "Sports", "Academics", "Admissions", "Events"].map((cat) => (
                   <button key={cat} className="flex items-center justify-between w-full py-2.5 border-b border-gray-50 last:border-0 text-sm text-gray-600 hover:text-[#ffffff] transition-colors group">
@@ -118,14 +118,14 @@ export default function News() {
                     <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
                   </button>
                 ))}
-              </motion.div>
+              </m.div>
 
               {/* Achievement Highlight */}
-              <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-[#111111] rounded-2xl p-6 text-white">
+              <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-[#111111] rounded-2xl p-6 text-white">
                 <p className="text-[#ffffff] text-xs font-bold uppercase tracking-widest mb-3">Achievement Spotlight</p>
                 <p className="font-heading font-bold text-lg mb-2">100% Board Results</p>
                 <p className="text-white/70 text-sm leading-relaxed">All Class 10 and 12 students passed their HBSE board exams in 2025 with 32 students scoring above 90%.</p>
-              </motion.div>
+              </m.div>
             </div>
           </div>
         </div>

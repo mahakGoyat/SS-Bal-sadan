@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "wouter";
-import { motion, useInView } from "framer-motion";
+import { m, useInView } from "framer-motion";
 import {
   Monitor, Users, Trophy, Leaf, Cpu, Music,
   Star, Quote, ArrowRight,
@@ -88,7 +88,7 @@ const heroImages = [
   {
     src: "/school-building.webp",
     alt: "SS Bal Sadan School Building",
-    srcSet: "/school-building-800w.webp 800w, /school-building.webp 1402w",
+    srcSet: "/school-building-480w.webp 480w, /school-building-800w.webp 800w, /school-building.webp 1402w",
   },
   {
     src: "/school-event.webp",
@@ -167,50 +167,47 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="relative z-10 w-full px-6 sm:px-10 lg:px-16 py-20">
+        {/* Single orchestrated stagger — one parent animation drives all 5 children
+            instead of 5 independent framer-motion timers firing simultaneously */}
+        <m.div
+          className="relative z-10 w-full px-6 sm:px-10 lg:px-16 py-20"
+          initial="hidden"
+          animate="visible"
+          variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.13 } } }}
+        >
           <div className="max-w-2xl text-left">
-            <motion.div
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+            <m.div
+              variants={fadeUp}
               className="inline-flex items-center gap-2 bg-[#ffffff]/20 border border-[#ffffff]/30 text-[#ffffff] text-sm font-medium px-4 py-2 rounded-full mb-6"
             >
               <GraduationCap className="w-4 h-4" />
               Affiliated to HBSE Board, Bhiwani — Est. 2003
-            </motion.div>
+            </m.div>
 
-            <motion.h1
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.1 }}
+            <m.h1
+              variants={fadeUp}
               className="font-heading font-bold text-white text-4xl sm:text-5xl lg:text-6xl leading-tight mb-5"
             >
               SS Bal Sadan School{" "}
               <span className="text-[#ffffff]">Siwan, Kaithal</span>
-            </motion.h1>
+            </m.h1>
 
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.25 }}
+            <m.p
+              variants={fadeUp}
               className="text-xl sm:text-2xl text-white/80 font-light mb-5 italic"
             >
               "Shaping Futures, Building Characters"
-            </motion.p>
+            </m.p>
 
-            <motion.p
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.7, delay: 0.4 }}
+            <m.p
+              variants={fadeUp}
               className="text-white/60 mb-10 max-w-xl text-base leading-relaxed"
             >
               A premier institution in Haryana dedicated to holistic education, nurturing young minds for over two decades with excellence, integrity, and innovation.
-            </motion.p>
+            </m.p>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
+            <m.div
+              variants={fadeUp}
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link
@@ -227,26 +224,22 @@ export default function Home() {
               >
                 Apply for Admission
               </Link>
-            </motion.div>
+            </m.div>
           </div>
-        </div>
+        </m.div>
 
-        {/* Scroll cue */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 8, 0] }}
-          transition={{ duration: 1.5, repeat: Infinity }}
-        >
+        {/* Scroll cue — pure CSS animation, zero JS cost vs framer-motion repeat:Infinity */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
           <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
             <div className="w-1 h-2 bg-[#ffffff] rounded-full"></div>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Stats */}
       <section className="bg-[#f5f5f5] py-14">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -259,7 +252,7 @@ export default function Home() {
               { label: "Experienced Teachers", value: 45, suffix: "+", icon: "👨‍🏫" },
               { label: "Acres of Campus", value: 5, suffix: " Acres", icon: "🌿" },
             ].map((stat) => (
-              <motion.div
+              <m.div
                 key={stat.label}
                 variants={fadeUp}
                 className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 p-8 flex flex-col items-center text-center border border-gray-100"
@@ -270,9 +263,9 @@ export default function Home() {
                 </div>
                 <div className="w-8 h-0.5 bg-[#111111] rounded-full my-3"></div>
                 <p className="text-gray-500 font-medium text-sm uppercase tracking-wider">{stat.label}</p>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
@@ -280,7 +273,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <motion.div
+            <m.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -303,8 +296,8 @@ export default function Home() {
               >
                 Read More About Us <ArrowRight className="w-4 h-4" />
               </Link>
-            </motion.div>
-            <motion.div
+            </m.div>
+            <m.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
@@ -320,7 +313,7 @@ export default function Home() {
                   loading="lazy"
                 />
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -328,7 +321,7 @@ export default function Home() {
       {/* Why Choose Us */}
       <section className="py-20 bg-[#f5f5f5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -339,8 +332,8 @@ export default function Home() {
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111] mt-2">
               What Makes Us Different
             </h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -348,7 +341,7 @@ export default function Home() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {whyChooseUs.map(({ icon: Icon, title, desc }) => (
-              <motion.div
+              <m.div
                 key={title}
                 variants={fadeUp}
                 className="bg-white rounded-2xl p-7 shadow-sm hover:shadow-xl transition-all duration-300 group border border-gray-100 hover:-translate-y-1"
@@ -358,16 +351,16 @@ export default function Home() {
                 </div>
                 <h3 className="font-heading font-semibold text-[#111111] text-lg mb-2">{title}</h3>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Principal's Message */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-gradient-to-br from-[#111111] to-[#000000] rounded-3xl overflow-hidden">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-gradient-to-br from-[#111111] to-[#000000] rounded-3xl overflow-hidden">
             <div className="grid lg:grid-cols-5 gap-0">
               <div className="lg:col-span-2 relative overflow-hidden">
                 <img
@@ -393,14 +386,14 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Achievements */}
       <section className="py-20 bg-[#f5f5f5] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -409,8 +402,8 @@ export default function Home() {
           >
             <span className="text-[#111111] font-semibold text-sm uppercase tracking-widest">Achievements & Awards</span>
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111] mt-2">Our Pride & Milestones</h2>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -418,7 +411,7 @@ export default function Home() {
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-5"
           >
             {achievements.map((ach) => (
-              <motion.div
+              <m.div
                 key={ach.title}
                 variants={fadeUp}
                 className="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 text-center"
@@ -429,16 +422,16 @@ export default function Home() {
                 <span className="text-xs font-semibold text-white bg-[#111111] px-2.5 py-1 rounded-full">{ach.year}</span>
                 <h3 className="font-heading font-semibold text-[#111111] text-sm mt-3 mb-2">{ach.title}</h3>
                 <p className="text-gray-500 text-xs leading-relaxed">{ach.desc}</p>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Gallery Preview */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -456,8 +449,8 @@ export default function Home() {
             >
               View Full Gallery <ArrowRight className="w-4 h-4" />
             </Link>
-          </motion.div>
-          <motion.div
+          </m.div>
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -465,7 +458,7 @@ export default function Home() {
             className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4"
           >
             {galleryImages.map((img) => (
-              <motion.div
+              <m.div
                 key={img.id}
                 variants={fadeUp}
                 className="relative group overflow-hidden rounded-xl shadow-sm cursor-pointer"
@@ -478,9 +471,9 @@ export default function Home() {
                 <div className="absolute inset-0 bg-gradient-to-t from-[#111111]/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                   <span className="text-white font-semibold text-sm">{img.label}</span>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
           <div className="text-center mt-8 sm:hidden">
             <Link href="/gallery" className="inline-flex items-center gap-2 text-[#111111] font-semibold border-2 border-[#111111] px-6 py-2.5 rounded-full text-sm">
               View Full Gallery <ArrowRight className="w-4 h-4" />
@@ -492,7 +485,7 @@ export default function Home() {
       {/* Testimonials — Infinite Right-to-Left Loop */}
       <section className="py-20 bg-[#f5f5f5] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
+          <m.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -501,7 +494,7 @@ export default function Home() {
           >
             <span className="text-[#111111] font-semibold text-sm uppercase tracking-widest">Testimonials</span>
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111] mt-2">What Our Community Says</h2>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Marquee Track */}
@@ -553,7 +546,7 @@ export default function Home() {
       {/* CTA Banner */}
       <section className="py-16 bg-[#111111]">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <BookOpen className="w-12 h-12 text-white/30 mx-auto mb-5" />
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-white mb-4">
               Admissions Are Now Open
@@ -567,7 +560,7 @@ export default function Home() {
             >
               Apply for Admission <ArrowRight className="w-5 h-5" />
             </Link>
-          </motion.div>
+          </m.div>
         </div>
       </section>
     </div>

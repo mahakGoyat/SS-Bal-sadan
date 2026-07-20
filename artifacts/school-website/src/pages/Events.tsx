@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Calendar, Clock, MapPin, ArrowRight } from "lucide-react";
 
 const fadeUp = {
@@ -47,13 +47,13 @@ export default function Events() {
       {/* Upcoming Events */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
             <span className="text-[#111111] font-semibold text-sm uppercase tracking-widest">Calendar</span>
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111] mt-2">Upcoming Events</h2>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-5">
+          </m.div>
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="space-y-5">
             {upcomingEvents.map((event) => (
-              <motion.div
+              <m.div
                 key={event.id}
                 variants={fadeUp}
                 className="bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-lg transition-all p-6 flex gap-5 group"
@@ -74,22 +74,22 @@ export default function Events() {
                     <span className="flex items-center gap-1.5 text-xs text-gray-500"><Calendar className="w-3.5 h-3.5 text-[#ffffff]" />{event.date}</span>
                   </div>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Past Events Gallery */}
       <section className="py-20 bg-[#f5f5f5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12">
             <span className="text-[#111111] font-semibold text-sm uppercase tracking-widest">Memories</span>
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111] mt-2">Past Events</h2>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          </m.div>
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {pastEvents.map((event) => (
-              <motion.div key={event.title} variants={fadeUp} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg group transition-all">
+              <m.div key={event.title} variants={fadeUp} className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg group transition-all">
                 <div className="overflow-hidden h-44">
                   <img src={event.img} alt={event.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 </div>
@@ -97,21 +97,21 @@ export default function Events() {
                   <h3 className="font-heading font-semibold text-[#111111] text-base">{event.title}</h3>
                   <p className="text-gray-400 text-xs mt-1 flex items-center gap-1"><Calendar className="w-3 h-3" />{event.date}</p>
                 </div>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Event Inquiry Form */}
       <section className="py-20 bg-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
             <span className="text-[#111111] font-semibold text-sm uppercase tracking-widest">Get Involved</span>
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111] mt-2">Event Enquiry</h2>
             <p className="text-gray-500 mt-3 text-sm">For event participation, sponsorship, or any information.</p>
-          </motion.div>
-          <motion.form
+          </m.div>
+          <m.form
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
@@ -136,7 +136,7 @@ export default function Events() {
             <button type="submit" data-testid="button-event-enquiry" className="w-full py-4 bg-[#111111] text-white rounded-full font-semibold text-sm hover:bg-[#000000] transition flex items-center justify-center gap-2">
               Send Enquiry <ArrowRight className="w-4 h-4" />
             </button>
-          </motion.form>
+          </m.form>
         </div>
       </section>
     </div>

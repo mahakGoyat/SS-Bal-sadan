@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -52,14 +52,14 @@ export default function Faculty() {
 
       <section className="py-14 bg-[#f5f5f5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
             <p className="text-gray-600 max-w-2xl mx-auto text-sm leading-relaxed">
               Our school is powered by a team of 45+ highly qualified and passionate educators committed to nurturing every student's potential. Each member brings years of experience, subject expertise, and a genuine care for student growth.
             </p>
-          </motion.div>
+          </m.div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
             {allStaff.map((member) => (
-              <motion.div
+              <m.div
                 key={member.name}
                 initial="hidden"
                 whileInView="visible"
@@ -83,7 +83,7 @@ export default function Faculty() {
                 </div>
                 <AnimatePresence>
                   {hoveredCard === member.name && (
-                    <motion.div
+                    <m.div
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
@@ -94,10 +94,10 @@ export default function Faculty() {
                         <p className="text-white/60 text-xs mb-2">{member.subject} · {member.dept}</p>
                         <p className="text-white/80 text-xs leading-relaxed">{member.bio}</p>
                       </div>
-                    </motion.div>
+                    </m.div>
                   )}
                 </AnimatePresence>
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>

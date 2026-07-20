@@ -1,0 +1,38 @@
+My site's desktop PageSpeed score is 82, blocked mainly by:
+- Total Blocking Time: 260ms with 5 "long tasks" found
+- Unused JavaScript: 66 KiB
+- Image delivery: 488 KiB still oversized
+
+Please investigate and fix:
+
+1. LONG MAIN-THREAD TASKS (5 found): Use Chrome DevTools Performance 
+   trace logic — identify what JavaScript is running heavy synchronous 
+   work during initial page load. Common culprits: 
+   - Any remaining setInterval/setTimeout-heavy animations that run on 
+     mount (check if there are other counters/animations beyond the one 
+     already fixed)
+   - Large array.map() operations rendering many DOM nodes at once (e.g. 
+     if the gallery or testimonials render ALL items immediately instead 
+     of virtualizing/paginating)
+   - Any heavy computation happening synchronously in a useEffect on the 
+     homepage
+   - Framer-motion animations that all trigger simultaneously on load 
+     instead of being staggered or triggered on scroll-into-view (use 
+     whileInView instead of animate where applicable, so off-screen 
+     animations don't cost anything at initial load)
+   Fix by deferring, lazy-loading, or optimizing whichever is the actual 
+   cause — show me what you find before/after.
+
+2. UNUSED JAVASCRIPT (66 KiB remaining): Run the build again and check 
+   which specific chunk still has significant unused code. Check if any 
+   icon library (e.g. lucide-react) is importing more icons than actually 
+   used, or if any UI component library files are bundled but barely used.
+
+3. IMAGE DELIVERY (488 KiB remaining): On DESKTOP specifically (larger 
+   viewport than mobile), check if the srcset/sizes are causing the 
+   browser to still pick oversized images for the sections visible in the 
+   viewport on a typical 1920px or 1440px desktop screen. Adjust the 
+   sizes attribute values accordingly.
+
+After fixing, run a production build and confirm the main bundle size and 
+chunk breakdown. Do not change visual design or layout.

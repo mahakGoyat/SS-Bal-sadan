@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { Shield, Star, Lightbulb, Heart, Users, Target, Quote, Clock, CheckCircle, BookOpen, Award } from "lucide-react";
 
 const fadeUp = {
@@ -78,7 +78,7 @@ export default function About() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-14 items-center">
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+            <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
               <span className="text-[#111111] font-semibold text-sm uppercase tracking-widest">Our History</span>
               <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111] mt-2 mb-5">
                 Founded with a Vision, Built on Values
@@ -92,8 +92,8 @@ export default function About() {
               <p className="text-gray-600 leading-relaxed">
                 Today, with over 1,200 students, 45+ faculty members, and a sprawling 5-acre campus, SS Bal Sadan stands as a symbol of educational excellence in Kaithal district.
               </p>
-            </motion.div>
-            <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="relative">
+            </m.div>
+            <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="relative">
               <img
                 src="/school-building.webp"
                 srcSet="/school-building-800w.webp 800w, /school-building.webp 1402w"
@@ -106,7 +106,7 @@ export default function About() {
                 <p className="font-heading font-bold text-3xl text-[#111111]">21+</p>
                 <p className="text-[#111111]/70 text-sm font-medium">Years of Excellence</p>
               </div>
-            </motion.div>
+            </m.div>
           </div>
         </div>
       </section>
@@ -114,17 +114,17 @@ export default function About() {
       {/* Mission & Vision — Expanded */}
       <section className="py-20 bg-[#f5f5f5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-14">
             <span className="text-[#111111] font-semibold text-sm uppercase tracking-widest">Our Purpose</span>
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111] mt-2">Mission & Vision</h2>
             <p className="text-gray-500 mt-3 max-w-2xl mx-auto">
               Every great institution is built on a clear purpose. Ours is rooted in the belief that education transforms lives — and communities.
             </p>
-          </motion.div>
+          </m.div>
 
           {/* Mission & Vision Cards */}
           <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <motion.div
+            <m.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
               className="bg-[#111111] rounded-3xl p-10 text-white relative overflow-hidden"
             >
@@ -150,9 +150,9 @@ export default function About() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </m.div>
 
-            <motion.div
+            <m.div
               initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}
               className="bg-white rounded-3xl p-10 border border-gray-100 shadow-md relative overflow-hidden"
             >
@@ -178,36 +178,36 @@ export default function About() {
                   </li>
                 ))}
               </ul>
-            </motion.div>
+            </m.div>
           </div>
 
           {/* Mission Pillars */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             {[
               { icon: BookOpen, title: "Academic Excellence", desc: "Consistent top results in HBSE board examinations with 100% pass rate and multiple state toppers." },
               { icon: Heart, title: "Holistic Development", desc: "Sports, arts, music, debate, and community service alongside rigorous academics." },
               { icon: Award, title: "Character Building", desc: "Values-based education that builds honesty, empathy, leadership, and civic responsibility." },
             ].map(({ icon: Icon, title, desc }) => (
-              <motion.div key={title} variants={fadeUp} className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
+              <m.div key={title} variants={fadeUp} className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm text-center hover:shadow-lg hover:-translate-y-1 transition-all duration-300">
                 <div className="w-14 h-14 bg-[#111111] rounded-2xl flex items-center justify-center mx-auto mb-5">
                   <Icon className="w-7 h-7 text-white" />
                 </div>
                 <h4 className="font-heading font-bold text-[#111111] text-lg mb-2">{title}</h4>
                 <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Core Values */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-12">
             <span className="text-[#111111] font-semibold text-sm uppercase tracking-widest">What We Believe In</span>
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111] mt-2">Our Core Values</h2>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
+          </m.div>
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={stagger} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5">
             {[
               { icon: Shield, label: "Discipline" },
               { icon: Heart, label: "Integrity" },
@@ -215,7 +215,7 @@ export default function About() {
               { icon: Lightbulb, label: "Innovation" },
               { icon: Users, label: "Inclusivity" },
             ].map(({ icon: Icon, label }) => (
-              <motion.div
+              <m.div
                 key={label}
                 variants={fadeUp}
                 className="text-center bg-[#f5f5f5] rounded-2xl p-7 hover:bg-[#111111] group transition-all duration-300 hover:-translate-y-1"
@@ -224,16 +224,16 @@ export default function About() {
                   <Icon className="w-6 h-6 text-[#111111] group-hover:text-white" />
                 </div>
                 <p className="font-heading font-bold text-[#111111] group-hover:text-white text-lg transition-colors">{label}</p>
-              </motion.div>
+              </m.div>
             ))}
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Affiliation */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-[#111111] rounded-3xl p-10 lg:p-14 text-white">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-[#111111] rounded-3xl p-10 lg:p-14 text-white">
             <div className="grid md:grid-cols-3 gap-8 text-center">
               {[
                 { label: "Board Affiliation", value: "HBSE, Bhiwani" },
@@ -246,17 +246,17 @@ export default function About() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Principal's Full Message */}
       <section className="py-20 bg-[#f5f5f5]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111]">Principal's Message</h2>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white rounded-3xl shadow-md overflow-hidden">
+          </m.div>
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="bg-white rounded-3xl shadow-md overflow-hidden">
             <div className="grid md:grid-cols-3 gap-0">
               <div className="md:col-span-1">
                 <img
@@ -285,21 +285,21 @@ export default function About() {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* School Timings */}
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
             <span className="text-[#111111] font-semibold text-sm uppercase tracking-widest">Schedule</span>
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111] mt-2 flex items-center justify-center gap-3">
               <Clock className="w-8 h-8 text-[#111111]" />
               School Timings
             </h2>
-          </motion.div>
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
+          </m.div>
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp}>
             <div className="overflow-x-auto rounded-2xl shadow-md border border-gray-100">
               <table className="w-full text-sm">
                 <thead className="bg-[#111111] text-white">
@@ -326,17 +326,17 @@ export default function About() {
                 </tbody>
               </table>
             </div>
-          </motion.div>
+          </m.div>
         </div>
       </section>
 
       {/* Teaching Staff */}
       <section className="py-20 bg-[#f5f5f5]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
+          <m.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} className="text-center mb-10">
             <span className="text-[#111111] font-semibold text-sm uppercase tracking-widest">Our Educators</span>
             <h2 className="font-heading font-bold text-3xl sm:text-4xl text-[#111111] mt-2">Teaching Staff</h2>
-          </motion.div>
+          </m.div>
           {/* Filter Tabs */}
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {staff.map((s) => (
@@ -352,7 +352,7 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {currentStaff.map((member) => (
-              <motion.div
+              <m.div
                 key={member.name}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -382,7 +382,7 @@ export default function About() {
                     </div>
                   </div>
                 )}
-              </motion.div>
+              </m.div>
             ))}
           </div>
         </div>

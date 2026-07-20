@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { label: "Home", path: "/" },
@@ -85,7 +85,7 @@ export default function Navbar() {
                   </button>
                   <AnimatePresence>
                     {openDropdown === link.label && (
-                      <motion.div
+                      <m.div
                         initial={{ opacity: 0, y: 8 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 8 }}
@@ -101,7 +101,7 @@ export default function Navbar() {
                             {child.label}
                           </Link>
                         ))}
-                      </motion.div>
+                      </m.div>
                     )}
                   </AnimatePresence>
                 </div>
@@ -143,7 +143,7 @@ export default function Navbar() {
       {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
-          <motion.div
+          <m.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -168,7 +168,7 @@ export default function Navbar() {
                       </button>
                       <AnimatePresence>
                         {openDropdown === link.label && (
-                          <motion.div
+                          <m.div
                             initial={{ height: 0 }}
                             animate={{ height: "auto" }}
                             exit={{ height: 0 }}
@@ -183,7 +183,7 @@ export default function Navbar() {
                                 {child.label}
                               </Link>
                             ))}
-                          </motion.div>
+                          </m.div>
                         )}
                       </AnimatePresence>
                     </>
@@ -208,7 +208,7 @@ export default function Navbar() {
                 Apply Now
               </Link>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
     </nav>

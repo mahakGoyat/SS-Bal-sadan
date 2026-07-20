@@ -1,5 +1,6 @@
 import { lazy, Suspense, useEffect } from "react";
 import { Switch, Route, Router as WouterRouter, useLocation } from "wouter";
+import { LazyMotion, domAnimation } from "framer-motion";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
@@ -62,12 +63,14 @@ function Router() {
 
 function App() {
   return (
-    <TooltipProvider>
-      <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
-        <Router />
-      </WouterRouter>
-      <Toaster />
-    </TooltipProvider>
+    <LazyMotion features={domAnimation}>
+      <TooltipProvider>
+        <WouterRouter base={import.meta.env.BASE_URL.replace(/\/$/, "")}>
+          <Router />
+        </WouterRouter>
+        <Toaster />
+      </TooltipProvider>
+    </LazyMotion>
   );
 }
 
