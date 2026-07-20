@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: ss-bal-sadan-api
+    runtime: node
+    rootDir: artifacts/api-server
+    buildCommand: npm install -g pnpm && pnpm install && pnpm run build
+    startCommand: node --enable-source-maps ./dist/index.mjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: FRONTEND_URL
+        sync: false   # Set this to your Vercel frontend URL, e.g. https://your-app.vercel.app
+      - key: BREVO_API_KEY
+        sync: false
+      - key: SCHOOL_EMAIL
+        sync: false
+      - key: GROQ_API_KEY
+        sync: false
+      - key: CARTESIA_API_KEY
+        sync: false
+      - key: SESSION_SECRET
+        sync: false

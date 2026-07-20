@@ -1,0 +1,202 @@
+Build a modern, interactive, and fully responsive school website for 
+**SS Bal Sadan School Siwan, Kaithal (Haryana, India)**. The design should feel 
+trustworthy, academic, and welcoming — using a navy blue + gold + white 
+color palette. Use smooth scroll animations, hover effects, and clean 
+typography (e.g., Poppins for headings, Lato for body text).
+
+The website should have the following pages with these sections:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🏠 PAGE 1: HOME
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Hero Section
+   - Full-width banner with school name "SS Bal Sadan School Siwan, Kaithal"
+   - Tagline: "Shaping Futures, Building Characters"
+   - One CTA button: "Explore School"
+   - Animated background or school building image
+
+2. About School (Short Intro)
+   - 2-3 lines about school's legacy
+   - "Read More" button linking to About Us page
+   - Stats: Founded Year | Students Enrolled | Experienced Teachers | 
+     Acres of Campus
+
+3. Why Choose Us
+   - Icon cards: Smart Classrooms | Experienced Faculty | Sports Facilities 
+     | Safe Environment | Digital Learning | Co-curricular Activities
+
+4. Principal's Message
+   - Photo of principal + short motivational message + signature
+
+5. Achievements / Awards
+   - Horizontal scroll or grid: Trophies, board toppers, award photos
+
+6. Gallery Preview
+   - 6-8 photo tiles from school events with "View Full Gallery" button
+
+7. Testimonials
+   - Carousel of parent/student reviews with name, class, and photo
+
+8. Quick Links
+   - Buttons: Documents | Admission Form | Download TC | Syllabus | 
+     Holiday List
+
+9. Footer
+   - School logo, address, phone, email, map embed
+   - Social media icons (Facebook, YouTube, WhatsApp)
+   - Copyright line
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ℹ️ PAGE 2: ABOUT US
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. School History & Background
+   - Founding year, founder's name, vision behind the school
+
+2. Mission & Vision
+   - Side-by-side cards with icons
+
+3. Core Values
+   - Icon list: Discipline | Integrity | Excellence | Innovation | 
+     Inclusivity
+
+4. Infrastructure
+   - Smart classrooms, labs (Science, Computer), Library, Sports Ground, 
+     Auditorium — with photos and short descriptions
+
+5. Affiliation & Recognition
+   - Board affiliation (CBSE/HBSE), school code, recognition certificates
+
+6. Management Committee
+   - Photo cards of management members with name and designation
+
+7. Principal's Full Message
+   - Full detailed message with photo
+
+8. School Timings
+   - Table: Summer/Winter timings for different classes
+
+9. Teaching Staff Section
+   - Filter Tabs: All | Primary | Middle | Senior | Non-Teaching Staff
+   - Staff Cards: Photo | Name | Subject | Qualification | Experience
+   - Hover effect showing a short bio
+   - HODs highlighted separately
+   - Special Educators: Counselor, Sports Coach, Librarian, Lab Assistants
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🖼️ PAGE 3: GALLERY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Category Filter Tabs
+   - All | Annual Function | Sports Day | Science Fair | Republic Day | 
+     Independence Day | Classroom Activities | Cultural Programs | 
+     Field Trips | Prize Distribution
+
+2. Photo Gallery
+   - Masonry/grid layout with lightbox popup on click
+   - Smooth hover zoom effect
+
+3. Video Gallery Section
+   - Embedded YouTube videos: School tour, annual function highlights, 
+     student activities
+
+4. Achievements Gallery
+   - Trophy photos, certificate images, newspaper cuttings
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📄 PAGE 4: DOCUMENTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Academic Documents
+   - Syllabus (Class-wise PDF download)
+   - Holiday List
+   - Exam Date Sheet
+   - Result / Report Card format
+
+2. School Certificates & Approvals
+   - Affiliation Certificate
+   - Recognition Certificate
+   - Building Safety Certificate
+   - Fire NOC
+
+3. Mandatory Public Disclosure (CBSE/HBSE)
+   - All legally required documents as per board norms
+
+4. Circular & Notices
+   - Downloadable PDFs with date and title
+
+5. TC (Transfer Certificate) Download / Request Form
+
+6. Fee Structure Section
+   - "Fee Structure for Academic Year 2025-26" heading
+   - Fee Table (Class-wise):
+     Columns: Class | Tuition Fee | Annual Charges | 
+     Computer Fee | Sports Fee | Total
+   - Payment Schedule: Quarterly/Monthly due dates with late fee policy
+   - Payment Methods: Online (UPI, Net Banking) | Cash | Bank Details
+   - Scholarship/Concession Info: Merit-based, SC/ST/OBC, sibling discount
+   - Important Notes: Refund policy, fee revision notice
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📞 PAGE 5: CONTACT US
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Contact Info Cards
+   - 📍 Address:ss bal sadan school siwan, kaithal
+   - 📞 Phone: [School Number]
+   - 📱 WhatsApp Number
+   - 📧 Email Address
+   - 🕐 Office Hours: Mon–Sat, 8:00 AM – 2:00 PM
+
+2. Google Map Embed
+   - Interactive map showing school location
+
+3. Contact Form
+   - Name | Mobile | Email | Subject | Message | Send Button
+
+4. Department-wise Contact
+   - Principal Office | Admission Enquiry | Accounts/Fee | 
+     Transport | General Enquiry
+
+5. Admission Form Section
+   - Eligibility Criteria: Age and class-wise criteria table
+   - Online Admission Form with fields:
+
+     STUDENT DETAILS:
+     - Full Name | Date of Birth | Gender | Aadhaar Number
+     - Class Applying For | Previous School Name | 
+       Last Class Passed | Percentage/Grade
+
+     PARENT/GUARDIAN DETAILS:
+     - Father's Name | Occupation | Mobile Number
+     - Mother's Name | Occupation | Mobile Number
+     - Email Address | Annual Income
+
+     ADDRESS DETAILS:
+     - Current Address | Permanent Address | Pincode
+
+     DOCUMENT UPLOAD:
+     - Birth Certificate | Aadhar Card | Previous Marksheet | 
+       Transfer Certificate | Passport Photo | 
+       Caste Certificate (if any)
+
+     - Submit Button + "Download PDF Form" option
+
+   - Admission Process Steps:
+     Step 1: Fill Form → Step 2: Document Verification → 
+     Step 3: Entrance Test (if applicable) → 
+     Step 4: Fee Payment → Step 5: Confirmation
+
+6. Social Media Links
+   - Facebook | YouTube | Instagram | WhatsApp Group Join
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎨 DESIGN REQUIREMENTS:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- Color Palette: Navy Blue (#1a2e5a), Gold (#d4a017), White (#ffffff), 
+  Light Gray (#f5f5f5)
+- Fonts: Poppins (Headings), Lato (Body)
+- Fully Mobile Responsive
+- Smooth scroll animations (AOS or Framer Motion)
+- Sticky navigation bar with dropdown menus
+- WhatsApp floating chat button
+- Back to top button
+- Fast loading optimized images
+- SEO friendly structure
+- Hindi + English bilingual support (optional toggle)

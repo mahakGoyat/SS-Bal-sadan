@@ -1,0 +1,23 @@
+LOCAL SETUP - Environment Variables
+=====================================
+
+This project uses a hidden file called ".env" located in this same folder
+(artifacts/api-server/.env). Files starting with a dot (.) do not show up
+in the Replit file list by default because Replit hides them automatically.
+
+The .env file already exists here with this content:
+
+GROQ_API_KEY=
+CARTESIA_API_KEY=
+
+To run this project on your own computer:
+1. Download/export this project from Replit.
+2. Open the "artifacts/api-server" folder.
+3. Find the file named ".env" (turn on "show hidden files" in your
+   file manager/editor if you don't see it).
+4. Fill in your real GROQ_API_KEY and CARTESIA_API_KEY values.
+5. Run: pnpm install
+6. Run: pnpm --filter @workspace/api-server run dev
+
+You can delete this ENV_SETUP.txt file once you've confirmed the .env
+file works as expected - it's just here to explain things.

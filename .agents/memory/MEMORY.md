@@ -1,0 +1,2 @@
+- [Gmail SMTP blocked on Replit](gmail-smtp-blocked.md) — Google rejects SMTP auth from GCP IPs (Replit's cloud); use HTTP-based email API instead.
+- [Contact form submissions fallback](contact-submissions-fallback.md) — contact route saves to /tmp JSON when email fails; submissions endpoint is dev-only (NODE_ENV check).
