@@ -26,8 +26,10 @@ export default function Navbar() {
   const [location] = useLocation();
 
   useEffect(() => {
+    // passive: true tells the browser this handler never calls preventDefault(),
+    // so it can fire the event without waiting — prevents scroll jank.
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

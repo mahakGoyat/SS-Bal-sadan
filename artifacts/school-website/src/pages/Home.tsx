@@ -14,14 +14,21 @@ function AnimatedCounter({ target, suffix = "", duration = 2 }: { target: number
 
   useEffect(() => {
     if (!inView) return;
-    let start = 0;
-    const step = target / (duration * 60);
-    const timer = setInterval(() => {
-      start += step;
-      if (start >= target) { setCount(target); clearInterval(timer); }
-      else setCount(Math.floor(start));
-    }, 1000 / 60);
-    return () => clearInterval(timer);
+    // requestAnimationFrame is aligned with the browser's paint cycle so the
+    // browser can batch these updates with other visual work instead of firing
+    // a setInterval callback that competes with rendering. It also auto-pauses
+    // when the tab is hidden, avoiding wasted work.
+    const startTime = performance.now();
+    let rafId: number;
+    const update = (now: number) => {
+      const progress = Math.min((now - startTime) / (duration * 1000), 1);
+      setCount(Math.floor(progress * target));
+      if (progress < 1) {
+        rafId = requestAnimationFrame(update);
+      }
+    };
+    rafId = requestAnimationFrame(update);
+    return () => cancelAnimationFrame(rafId);
   }, [inView, target, duration]);
 
   return <span ref={ref}>{count.toLocaleString()}{suffix}</span>;

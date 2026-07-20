@@ -1,0 +1,38 @@
+My site's Performance score is stuck at 73 with LCP at 5.1s. I need you to 
+do a deep investigation and fix, not just surface-level changes.
+
+STEP 1 - DIAGNOSE FIRST:
+- Identify exactly which element is the LCP (Largest Contentful Paint) 
+  element on the homepage — is it the hero image, hero text, or something 
+  else?
+- Check the network waterfall: what loads BEFORE the LCP element gets to 
+  start loading? (e.g. is it waiting on JS bundle to execute before the 
+  image tag even exists in the DOM, since this is a React app?)
+- Check if the hero image is being discovered late because it's rendered 
+  by JavaScript instead of being in the initial HTML
+
+STEP 2 - FIX BASED ON FINDINGS:
+- If the hero image is JS-rendered (common React problem): add a 
+  `<link rel="preload" as="image" href="...">` tag directly in index.html 
+  for the hero image so the browser starts downloading it immediately, 
+  before React even loads/hydrates
+- If the hero image srcset/sizes aren't matching real device width 
+  correctly, fix the sizes attriburte so mobile gets the 480w or 800w 
+  version, not the 1600w one
+- Check if fonts are still blocking anything — verify the preload font 
+  fix from before is actually working (view network tab priority)
+
+STEP 3 - ALSO FIX THESE SMALLER ITEMS:
+- "Improve image delivery" (429 KiB remaining) — find which specific 
+  images are still oversized for their display size and fix their 
+  srcset/sizes
+- "Reduce unused JavaScript" (67 KiB) — identify which specific chunk/
+  library still has unused code
+- "Avoid long main-thread tasks" — identify what's causing the 1 long task 
+  and see if it can be deferred or broken up (e.g. move non-critical JS to 
+  run after page load using requestIdleCallback or setTimeout)
+- "Forced reflow" — find the code causing layout thrashing (usually 
+  reading and writing DOM properties in the same loop) and fix it
+
+Give me a clear before/after explanation of the LCP diagnosis specifically, 
+since that's the biggest lever for the score. Do not change visual design.

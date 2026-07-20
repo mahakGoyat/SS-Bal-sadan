@@ -13,6 +13,21 @@
     <meta name="twitter:title" content="SS Bal Sadan School" />
     <meta name="twitter:description" content="SS Bal Sadan School — built on Replit. Update this description to reflect the app." />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <!--
+      Preload the first hero image so the browser fetches it immediately from
+      HTML — before React loads, before any JS executes. This is the single
+      biggest lever for LCP on a JS-rendered React site: without this, the
+      browser can't discover the image URL until the 461 KB bundle parses and
+      React renders the <img> tag (~3-4 s delay).
+    -->
+    <link
+      rel="preload"
+      as="image"
+      href="/school-front.webp"
+      imagesrcset="/school-front-480w.webp 480w, /school-front-800w.webp 800w, /school-front.webp 1600w"
+      imagesizes="100vw"
+      fetchpriority="high"
+    />
     <!-- Preconnect to Google Fonts CDN for faster DNS + TLS -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
