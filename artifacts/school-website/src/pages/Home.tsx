@@ -152,8 +152,11 @@ export default function Home() {
             <button
               key={i}
               onClick={() => setHeroIdx(i)}
-              className={`w-2.5 h-2.5 rounded-full transition-all ${i === heroIdx ? "bg-white scale-125" : "bg-white/40"}`}
-            />
+              aria-label={`Go to slide ${i + 1}`}
+              className={`w-6 h-6 flex items-center justify-center rounded-full transition-all`}
+            >
+              <span className={`w-2.5 h-2.5 rounded-full transition-all pointer-events-none ${i === heroIdx ? "bg-white scale-125" : "bg-white/40"}`} />
+            </button>
           ))}
         </div>
 
@@ -379,7 +382,7 @@ export default function Home() {
                 <div>
                   <p className="font-heading font-bold text-white text-xl">Dr. Ramesh Kumar Sharma</p>
                   <p className="text-[#ffffff] text-sm">Principal, SS Bal Sadan School</p>
-                  <p className="text-white/40 text-xs mt-1 italic font-heading">M.Ed., Ph.D. — 20+ years in education</p>
+                  <p className="text-white/60 text-xs mt-1 italic font-heading">M.Ed., Ph.D. — 20+ years in education</p>
                 </div>
               </div>
             </div>
@@ -417,7 +420,7 @@ export default function Home() {
                   <Trophy className="w-6 h-6 text-[#111111]" />
                 </div>
                 <span className="text-xs font-semibold text-white bg-[#111111] px-2.5 py-1 rounded-full">{ach.year}</span>
-                <h4 className="font-heading font-semibold text-[#111111] text-sm mt-3 mb-2">{ach.title}</h4>
+                <h3 className="font-heading font-semibold text-[#111111] text-sm mt-3 mb-2">{ach.title}</h3>
                 <p className="text-gray-500 text-xs leading-relaxed">{ach.desc}</p>
               </motion.div>
             ))}
@@ -526,7 +529,7 @@ export default function Home() {
                   />
                   <div>
                     <p className="font-heading font-semibold text-[#111111] text-sm">{t.name}</p>
-                    <p className="text-gray-400 text-xs">{t.role}</p>
+                    <p className="text-gray-500 text-xs">{t.role}</p>
                     <div className="flex gap-0.5 mt-1">
                       {Array(5).fill(0).map((_, i) => (
                         <Star key={i} className="w-3 h-3 text-yellow-400 fill-yellow-400" />

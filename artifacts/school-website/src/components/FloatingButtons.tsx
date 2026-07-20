@@ -11,6 +11,7 @@ export default function FloatingButtons() {
         rel="noreferrer"
         data-testid="button-whatsapp-float"
         className="w-14 h-14 shrink-0 rounded-full bg-green-500 flex items-center justify-center shadow-xl hover:bg-green-600 transition-all hover:scale-110"
+        aria-label="Chat with us on WhatsApp"
         title="Chat on WhatsApp"
       >
         <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white">

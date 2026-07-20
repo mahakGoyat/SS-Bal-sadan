@@ -1,0 +1,39 @@
+I need to fix all Accessibility issues found by Google PageSpeed Insights / 
+Lighthouse on my React/Vite site. Please fix ALL of the following:
+
+1. BUTTONS/LINKS WITHOUT ACCESSIBLE NAMES: Find every <button> or <a> tag 
+   in the codebase that only contains an icon (no visible text) — for 
+   example menu toggles, close buttons, social media icons, carousel 
+   arrows, or icon-only links. Add an appropriate `aria-label` attribute 
+   to each one describing what it does (e.g. aria-label="Open menu", 
+   aria-label="Next slide", aria-label="Close", aria-label="Visit our 
+   Facebook page").
+
+2. ZOOM DISABLED: In index.html, find the <meta name="viewport"> tag. If it 
+   has `user-scalable=no` or `maximum-scale` less than 5, remove those 
+   restrictions so users can pinch-to-zoom. It should look like:
+   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+3. TOUCH TARGETS TOO SMALL: Find all clickable elements (buttons, links, 
+   icons) that are smaller than 24x24px or have insufficient spacing 
+   between them, especially in the navbar, mobile menu, and footer. 
+   Increase their padding/size so the clickable area is at least 24x24px 
+   (44x44px is even better for mobile).
+
+4. INSUFFICIENT COLOR CONTRAST: Scan all text elements against their 
+   background colors and find any that don't meet WCAG AA contrast ratio 
+   (4.5:1 for normal text, 3:1 for large text). This is likely light gray 
+   text on white/light backgrounds. Darken the text color or adjust the 
+   background so contrast passes, without changing the overall color 
+   scheme/branding significantly.
+
+5. HEADING ORDER: Check every page for heading tags (h1, h2, h3, h4, h5, 
+   h6) and make sure they're not skipping levels (e.g. an h1 followed 
+   directly by an h4 with no h2/h3 in between). Fix the heading hierarchy 
+   to be sequential on every page, without changing the visual font size 
+   (use CSS to control size separately from the semantic heading level 
+   if needed).
+
+After all fixes, give me a summary of every file changed and what was fixed 
+in each. Do not change the visual design, colors scheme, or layout 
+significantly — only fix accessibility issues.

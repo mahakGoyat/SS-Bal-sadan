@@ -128,8 +128,10 @@ export default function Navbar() {
           {/* Mobile menu btn */}
           <button
             data-testid="button-mobile-menu"
-            className="lg:hidden text-white p-2 rounded-md hover:bg-white/10 transition"
+            className="lg:hidden text-white p-3 rounded-md hover:bg-white/10 transition"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
