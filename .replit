@@ -1,4 +1,4 @@
-modules = ["nodejs-24"]
+modules = ["web", "nodejs-20", "bash"]
 
 [deployment]
 router = "application"
@@ -71,3 +71,6 @@ externalPort = 3000
 [userenv.shared]
 GMAIL_USER = "mahakgoyat01@gmail.com"
 SCHOOL_EMAIL = "mahakgoyat01@gmail.com"
+
+[nix]
+channel = "stable-25_05"
