@@ -3,7 +3,8 @@ import { logger } from "../lib/logger";
 
 const ttsRouter = Router();
 
-const CARTESIA_VOICE_ID = "faf0731e-dfb9-4cfc-8119-259a79b27e12";
+// Built-in Cartesia voice — works on all plans without custom voice setup
+const CARTESIA_VOICE_ID = "a0e99841-438c-4a64-b679-ae501e7d6091"; // Barbershop Man (clear, neutral)
 
 ttsRouter.post("/tts", async (req, res) => {
   const { text } = req.body as { text?: unknown };
@@ -31,7 +32,7 @@ ttsRouter.post("/tts", async (req, res) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        model_id: "sonic-2",
+        model_id: "sonic-multilingual",
         transcript: text,
         voice: {
           mode: "id",
@@ -42,7 +43,7 @@ ttsRouter.post("/tts", async (req, res) => {
           bit_rate: 128000,
           sample_rate: 44100,
         },
-        language: "en",
+        language: /[\u0900-\u097F]/.test(text) ? "hi" : "en",
       }),
     });
 

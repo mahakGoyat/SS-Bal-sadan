@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { m, AnimatePresence } from "framer-motion";
 import { X, Send, Bot, Loader2, Volume2, VolumeX } from "lucide-react";
 import chatbotIcon from "@/assets/chatbot-icon.webp";
 import { API_BASE } from "@/lib/api";
@@ -124,7 +124,7 @@ export default function Chatbot() {
       {/* Chat window */}
       <AnimatePresence>
         {open && (
-          <motion.div
+          <m.div
             key="chat-window"
             initial={{ opacity: 0, y: 20, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -245,7 +245,7 @@ export default function Chatbot() {
                 )}
               </button>
             </div>
-          </motion.div>
+          </m.div>
         )}
       </AnimatePresence>
 
@@ -256,19 +256,19 @@ export default function Chatbot() {
       >
         <AnimatePresence>
           {!open && (
-            <motion.span
+            <m.span
               initial={{ opacity: 0, y: 4 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: 4 }}
               className="bg-white text-[#111111] text-xs font-semibold px-2.5 py-1 rounded-full shadow-md border border-gray-200 whitespace-nowrap"
             >
               Ask me
-            </motion.span>
+            </m.span>
           )}
         </AnimatePresence>
 
         <div className="relative">
-          <motion.button
+          <m.button
             onClick={() => setOpen((o) => !o)}
             whileTap={{ scale: 0.92 }}
             className="w-20 h-20 bg-transparent rounded-full shadow-xl flex items-center justify-center transition-all hover:shadow-2xl overflow-hidden"
@@ -276,7 +276,7 @@ export default function Chatbot() {
           >
             <AnimatePresence mode="wait">
               {open ? (
-                <motion.span
+                <m.span
                   key="x"
                   initial={{ rotate: -90, opacity: 0 }}
                   animate={{ rotate: 0, opacity: 1 }}
@@ -285,9 +285,9 @@ export default function Chatbot() {
                   className="w-full h-full bg-[#111111] flex items-center justify-center"
                 >
                   <X className="w-6 h-6 text-white" />
-                </motion.span>
+                </m.span>
               ) : (
-                <motion.img
+                <m.img
                   key="chat"
                   src={chatbotIcon}
                   alt="Chat with us"
@@ -299,7 +299,7 @@ export default function Chatbot() {
                 />
               )}
             </AnimatePresence>
-          </motion.button>
+          </m.button>
 
           {/* Unread dot */}
           {unread && !open && (
