@@ -1,3 +1,5 @@
+<img width="1351" height="642" alt="ss bal sadan" src="https://github.com/user-attachments/assets/fa2e7c20-49c4-4cc4-9f16-529d56766d19" />
+
 # 🏫 SS Bal Sadan School Website
 
 > A full-featured school website built for SS Bal Sadan — from admissions to contact, with a working email pipeline behind it. React + TypeScript frontend, Express + TypeScript backend.
