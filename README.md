@@ -9,7 +9,10 @@
 
 **🔗 Live site:** https://ss-bal-sadan-school-website.vercel.app
 **🔗 API:** https://ss-bal-sadan.onrender.com
-<img width="480" height="226" alt="SS_Bal_Sadan_School_small" src="https://github.com/user-attachments/assets/effb0a15-75a3-49a5-b633-a2b1049f43a9" />
+
+
+https://github.com/user-attachments/assets/c4e26b66-7840-4468-81db-802dfe5dc3b6
+
 
 
 ---
