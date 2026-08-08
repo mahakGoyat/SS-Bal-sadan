@@ -11,7 +11,8 @@
 **🔗 API:** https://ss-bal-sadan.onrender.com
 
 
-https://github.com/user-attachments/assets/c4e26b66-7840-4468-81db-802dfe5dc3b6
+<img width="640" height="301" alt="SS_Bal_Sadan_School" src="https://github.com/user-attachments/assets/2c8ebabd-ea43-4018-9021-05b4f760a529" />
+
 
 
 
