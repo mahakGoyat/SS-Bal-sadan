@@ -1,72 +1,98 @@
 <img width="1351" height="642" alt="ss bal sadan" src="https://github.com/user-attachments/assets/fa2e7c20-49c4-4cc4-9f16-529d56766d19" />
 
-# 🏫 SS Bal Sadan School Website
+# SS Bal Sadan School Website
 
-> A full-featured school website built for SS Bal Sadan — from admissions to contact, with a working email pipeline behind it. React + TypeScript frontend, Express + TypeScript backend.
+A complete school website for SS Bal Sadan School, Siwan, Kaithal, Haryana. It has admission and contact forms that send real emails, a Hindi and English AI chatbot, and voice replies.
 
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
 ![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
 
-**🔗 Live site:** https://ss-bal-sadan-school-website.vercel.app
-**🔗 API:** https://ss-bal-sadan.onrender.com
-
+**Live site:** [ss-bal-sadan-school-website.vercel.app](https://ss-bal-sadan-school-website.vercel.app)
+**API:** [ss-bal-sadan.onrender.com](https://ss-bal-sadan.onrender.com)
 
 <img width="640" height="301" alt="SS_Bal_Sadan_School" src="https://github.com/user-attachments/assets/2c8ebabd-ea43-4018-9021-05b4f760a529" />
 
-
-
-
 ---
 
-## ✨ What it does
+## Features
 
-Nine sections covering everything a real school website needs — built to feel complete, not templated.
+- **10 pages:** Home, About, Academics, Admissions, Faculty, Gallery, Documents, News, Events and Contact
+- **Admission and contact forms:** submissions go through the backend and arrive as real emails (sent with Brevo)
+- **AI chatbot:** answers questions about the school in Hindi and English (Groq, Llama 3.3 70B)
+- **Voice replies:** text to speech that detects Hindi or English automatically (Cartesia)
+- **100 PageSpeed score:** WebP images, accessibility fixes and performance tuning
+- **Responsive design:** works on phones, tablets and desktops
 
-| Section | Details |
-|---|---|
-| **Home** | Landing hero, school highlights |
-| **About** | School history, mission, facilities |
-| **Admissions** | Working admission form — sends real emails on submit |
-| **Contact** | Contact form wired to backend, plus school location |
-| **Gallery / Academics / etc.** | Additional informational sections |
+## Tech Stack
 
-Runs at a **100 PageSpeed score** — images converted to WebP, accessibility fixes applied, performance tuned.
+- **Frontend:** React, TypeScript, Vite, Tailwind CSS, Radix UI, Framer Motion
+- **Backend:** Express, TypeScript
+- **AI and voice:** Groq API, Cartesia
+- **Email:** Brevo
+- **Hosting:** Vercel (frontend) and Render (backend)
+- **Tooling:** pnpm workspaces
 
-## 🛠️ How it's built
-
-- **Frontend** — React + TypeScript, built with Vite, deployed on Vercel
-- **Backend** — Express + TypeScript API, deployed on Render, handles email sending
-- **Email** — Backend integrates with Brevo's email API for admission/contact form submissions
-- **Styling** — Responsive layout, optimized images, accessibility-first markup
-
-## 📁 Project structure
+## Project Structure
 
 ```
-.
-├── src/                 # React frontend source
-├── artifacts/
-│   └── api-server/      # Express backend
-├── school-website/       # frontend build assets
-├── package.json
-└── render.yaml           # Render deployment config
+artifacts/
+├── school-website/   # React frontend
+└── api-server/       # Express backend (forms, chatbot, voice)
 ```
 
-## 🚀 Run it locally
+## Run Locally
 
-```
+### Prerequisites
+
+- Node.js
+- [pnpm](https://pnpm.io/installation) (this project uses pnpm, not npm)
+
+### Setup
+
+```bash
 git clone https://github.com/mahakGoyat/SS-Bal-sadan.git
 cd SS-Bal-sadan
-npm install
+pnpm install
 ```
 
-Copy `.env.example` to `.env` and fill in your own values, then:
+### Start the backend
 
+```bash
+pnpm --filter @workspace/api-server run dev
 ```
-npm run dev
+
+The API runs on port 8080.
+
+### Start the frontend
+
+In a new terminal:
+
+```bash
+pnpm --filter @workspace/school-website run dev
 ```
 
-## 📄 License
+## Environment Variables
 
-Built by [Mahak Goyat](https://github.com/mahakGoyat)
+Create a `.env` file for each part and add your own values. Never commit `.env` files or share your keys.
+
+**Backend (`artifacts/api-server`)**
+
+| Variable | Used for |
+| --- | --- |
+| `GROQ_API_KEY` | AI chatbot |
+| `CARTESIA_API_KEY` | Voice replies |
+| `BREVO_API_KEY` | Sending form emails |
+| `SCHOOL_EMAIL` | Email address that receives form submissions |
+| `FRONTEND_URL` | Allowed frontend URL for CORS |
+
+**Frontend (`artifacts/school-website`)**
+
+| Variable | Used for |
+| --- | --- |
+| `VITE_API_URL` | URL of the backend API |
+
+## Author
+
+Built by [Mahak Goyat](https://github.com/mahakGoyat).
